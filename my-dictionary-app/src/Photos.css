@@ -1,0 +1,23 @@
+.Photos img {
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Photos img:hover {
+    transform: scale(1.05);
+    /* This adds a nice interactive "pop" when hovering */
+    cursor: zoom-in;
+}
+
+.Photos .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Photos .col-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    padding: 5px;
+}
