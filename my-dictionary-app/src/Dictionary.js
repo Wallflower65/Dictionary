@@ -5,37 +5,57 @@ import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary() {
-const [keyword, setKeyword] = useState("");
-const [results, setResults] = useState(null);
-const [photos, setPhotos] = useState(null);
+  const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState(null);
+  const [photos, setPhotos] = useState(null);
 
-function handleDictionaryResponse(response) {
-setResults(response.data[0]);
-}
+  function handleDictionaryResponse(response) {
+    setResults(response.data[0]);
+  }
 
-function handlePexelsResponse(response) {
-setPhotos(response.data.photos);
-}
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
+  }
 
-function search(event) {
-event.preventDefault();
+  function search(event) {
+    event.preventDefault();
 
-}
+    // Dictionary API
+    let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
 
-function handleKeywordChange(event) {
-setKeyword(event.target.value);
-}
+    // Pexels API
+    let pexelsApiKey = "YOUR_PEXELS_API_KEY";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=6`;
+    let headers = { Authorization: pexelsApiKey };
 
-return (
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+  }
 
-<div className="Dictionary">
-<section>
-<h1>What word do you want to look up?</h1>
-<form onSubmit={search}>
-<input type="search" onChange={handleKeywordChange} placeholder="Search for a word..." />
-</form>
-</section>
+  function handleKeywordChange(event) {
+    setKeyword(event.target.value);
+  }
 
-</div>
-);
+  return (
+    <div className="Dictionary">
+      <section>
+        <h1>What word do you want to look up?</h1>
+        <form onSubmit={search}>
+          <input
+            type="search"
+            onChange={handleKeywordChange}
+            placeholder="Search for a word..."
+            className="search-input"
+          />
+        </form>
+        <div className="hint">
+          i.e. coding, nursing, sunset, forest
+        </div>
+      </section>
+
+      <Results results={results} />
+      <Photos photos={photos} />
+
+    </div>
+  );
 }
