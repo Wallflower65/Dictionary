@@ -98,3 +98,28 @@ footer {
     font-size: 13px;
     opacity: 0.8;
 }
+
+body {
+    background-color: #f5f8fa;
+}
+
+.Dictionary {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+section {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
