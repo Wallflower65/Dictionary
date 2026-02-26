@@ -18,13 +18,21 @@ setPhotos(response.data.images);
 }
 
 function search(event) {
-event.preventDefault();
-let dictionaryApiUrl = "" + keyword;
-axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
+  event.preventDefault();
 
-let imagesApiKey = "787ofe478b86fc75394a34e4469a2t40";
-let imagesApiUrl = "" + keyword + "&key=" + imagesApiKey;
-axios.get(imagesApiUrl).then(handleImagesResponse);
+  // Dictionary API
+  let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+  axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
+
+  // Pexels API
+  let pexelsApiKey = "4ISppFer3WD3BY3tORzbLLgX9UiIBFHZQkl6ZQO6n63ZEGBIQFjhBZfr";
+  let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=6`;
+
+  let headers = {
+    Authorization: pexelsApiKey,
+  };
+
+  axios.get(pexelsApiUrl, { headers: headers }).then(handleImagesResponse);
 }
 
 function handleKeywordChange(event) {
