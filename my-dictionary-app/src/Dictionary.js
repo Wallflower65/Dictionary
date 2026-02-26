@@ -70,7 +70,7 @@ return (
           </a>{" "}
           and{" "}
           <a
-            href="https://weather-react-phaphamani.netlify.app/"
+            href="https://dictionary-phaphamani.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
