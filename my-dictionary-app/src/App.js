@@ -6,7 +6,7 @@ return (
 <div className="App">
 <div className="container">
 <header className="App-header">
-{/* We removed the <img> tag that was looking for 'logo' here */}
+  <h1 className="app-title">WordWave 🌊</h1>
 </header>
 <main>
 <Dictionary />

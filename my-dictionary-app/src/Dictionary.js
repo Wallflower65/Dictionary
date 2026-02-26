@@ -51,9 +51,32 @@ return (
 </section>
 <Results results={results} />
 <Photos photos={photos} />
-<footer className="footer">
-Coded by Your Name, open-sourced on GitHub
-</footer>
+<footer>
+          This project was coded by{" "}
+          <a
+            href="https://github.com/Wallflower65"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Phaphamani Zoneleni
+          </a>{" "}
+          and is{" "}
+          <a
+            href="https://github.com/Wallflower65/Dictionary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            open-sourced on GitHub
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://weather-react-phaphamani.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            hosted on Netlify
+          </a>
+        </footer>
 </div>
 );
 }
