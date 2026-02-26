@@ -14,7 +14,7 @@ setResults(response.data[0]);
 }
 
 function handleImagesResponse(response) {
-setPhotos(response.data.images);
+  setPhotos(response.data.photos);
 }
 
 function search(event) {
