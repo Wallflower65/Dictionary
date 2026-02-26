@@ -65,11 +65,31 @@ input {
 }
 
 footer {
-    margin-top: 50px;
-    padding: 40px 20px;
+    margin-top: 60px;
+    padding: 30px 20px;
     text-align: center;
-    border-top: 1px solid #e2e8f0;
-    color: #4a5568;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-weight: 500;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+}
+
+footer a:hover {
+    color: #ffd6ff;
+    border-bottom: 2px solid #ffd6ff;
 }
 
 .footer-content p {
